@@ -10,3 +10,4 @@ Trying to drive a single RGB LED WS2812 with an FPGA with VHDL
 # RTL Schematic
 
 # Finite state machine
+![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/finite_state_machine.jpg)
