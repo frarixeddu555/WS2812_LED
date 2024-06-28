@@ -9,6 +9,11 @@ Trying to drive a single RGB LED WS2812 with an FPGA using VHDL
 
 # RTL Schematic
 
+Here the RTL schematic of the project.
+All signals are 1 bit signal less **color** that is a 24 bit signal (in order to drive just one LED).
+
+![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/TX_WS2812_schematic.jpg)
+
 # Finite state machine (FSM)
 There are **two trial version** of this FSM: 
 - one changes the color of the LED though changes in the state of the **switch** signal.
