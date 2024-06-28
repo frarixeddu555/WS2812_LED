@@ -21,4 +21,4 @@ There are **two trial version** of this FSM:
 
 In red on the right, there are the FSM's outputs for each state.
 
-![alt text]([https://github.com/frarixeddu555/WS2812_LED/blob/main/finite_state_machine.jpg](https://github.com/frarixeddu555/WS2812_LED/blob/main/TX_WS2812_finite_state_machine.jpg))
+![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/TX_WS2812_finite_state_machine.jpg))
