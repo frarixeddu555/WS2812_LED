@@ -1,0 +1,96 @@
+
+
+NET ck LOC = T9;
+
+#-- Push_button -----------
+NET reset 	LOC = L14;		#BTN3
+NET btn		LOC = L13;		#BTN2
+#NET  		LOC = L12;		#BTN1
+#NET  		LOC = M13;		#BTN0
+
+
+#NET display7seg(7) LOC = E14;
+#NET display7seg(6) LOC = G13;
+#NET display7seg(5) LOC = N15;
+#NET display7seg(4) LOC = P15;
+#NET display7seg(3) LOC = R16;
+#NET display7seg(2) LOC = F13;
+#NET display7seg(1) LOC = N16;
+#NET display7seg(0) LOC = P16;
+
+#NET AN_display7seg(3) LOC = E13;
+#NET AN_display7seg(2) LOC = F14;
+#NET AN_display7seg(1) LOC = G14;
+#NET AN_display7seg(0) LOC = D14;
+
+
+
+#
+#
+#
+#NET sw(7) LOC = K13;		#switches
+#NET sw(6) LOC = K14;
+#NET sw(5) LOC = J13;
+#NET sw(4) LOC = J14;
+#NET sw(3) LOC = H13;
+NET switch(2) LOC = H14;
+NET switch(1) LOC = G12;
+NET switch(0) LOC = F12;
+#
+#
+##conector J2
+#NET  	LOC = "B4";
+
+#-- VGA -----------------------------
+#NET rgb_out(2) LOC = R12;
+#NET rgb_out(1) LOC = T12;
+#NET rgb_out(0) LOC = R11;
+
+#NET sinc_h LOC = R9;
+#NET sinc_v LOC = T10;
+
+#------------------------------------
+
+
+#NET LEDs(7) LOC = P11;
+#NET LEDs(6) LOC = P12;
+#NET LEDs(5) LOC = N12;
+#NET LEDs(4) LOC = P13;
+#NET LEDs(3) LOC = N14;
+#NET LEDs(2) LOC = L12;
+#NET LEDs(1) LOC = P14;
+#NET LEDs(0) LOC = K12;
+
+## conector expansion A2
+#NET A_in(7) LOC = E6;
+#NET A_in(6) LOC = D5;
+NET s_out LOC = C5;
+#NET A_in(4) LOC = D6;
+#NET A_in(3) LOC = C6;
+#NET A_in(2) LOC = E7;
+#NET A_in(1) LOC = C7;
+#NET A_in(0) LOC = D7;
+#NET B_in(7) LOC = C8;
+#NET B_in(6) LOC = D8;
+#NET B_in(5) LOC = C9;
+#NET B_in(4) LOC = D10;
+#NET B_in(3) LOC = A3;
+#NET B_in(2) LOC = B4;
+#NET B_in(1) LOC = A4;
+#NET B_in(0) LOC = B5;
+#NET A_out(7) LOC = A5;
+#NET A_out(6) LOC = B6;
+#NET A_out(5) LOC = B7;
+#NET A_out(4) LOC = A7;
+#NET A_out(3) LOC = B8;
+#NET A_out(2) LOC = A8;
+#NET A_out(1) LOC = A9;
+#NET A_out(0) LOC = B10;
+#NET B_out(7) LOC = A10;
+#NET B_out(6) LOC = B11;
+#NET B_out(5) LOC = B12;
+#NET B_out(4) LOC = A12;
+#NET B_out(3) LOC = B13;
+#NET B_out(2) LOC = A13;
+#NET B_out(1) LOC = B14;
+#NET B_out(0) LOC = D9;
