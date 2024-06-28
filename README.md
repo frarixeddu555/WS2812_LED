@@ -21,6 +21,7 @@ All signals are 1 bit signal less **color** that is a 24 bit signal (in order to
 There are **two trial version** of this FSM: 
 - one changes the color of the LED though changes in the state of the **switch** signal.
 - other uses a **btn** signal to light up the LED of the color indicated by the **switch** signal at that moment (_the commented part in the code_);
+For simplicity of testing I consider the first one version (without sensitive to btn signal by the system). 
 
 In red on the right, there are the FSM's outputs for each state.
 
@@ -28,7 +29,7 @@ In red on the right, there are the FSM's outputs for each state.
 
 
 # Issues
-Disclaimer: all my considerations concern the trial without btn signal input.
+**Please note**: all my considerations concern the trial without btn signal input.
 
 As far as concerned timing requirements, coding a "1" or "0" with high and low pulses seems work fine. 
 I attached some oscilloscope's photos in the folder "Oscilloscope output" if you want to check it out.
