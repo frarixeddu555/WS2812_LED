@@ -21,7 +21,7 @@ All signals are 1 bit signal less **color** that is a 24 bit signal (in order to
 There are **two trial version** of this FSM: 
 - one changes the color of the LED though changes in the state of the **switch** signal.
 - other uses a **btn** signal to light up the LED of the color indicated by the **switch** signal at that moment (_the commented part in the code_);
-For simplicity of testing I consider the first one version (without sensitive to btn signal by the system). 
+For simplicity of testing I considered the first one version (without sensitive to btn signal by the system). 
 
 In red on the right, there are the FSM's outputs for each state.
 
