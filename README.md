@@ -31,11 +31,11 @@ In red on the right, there are the FSM's outputs for each state.
 # Issues
 **Please note**: all my considerations concern the trial without btn signal input.
 
-As far as concerned timing requirements, coding a "1" or "0" with high and low pulses seems work fine. 
+As far as concerned timing requirements, coding a "1" or "0" with high and low pulses seems to work fine. 
 I attached some oscilloscope's photos in the folder "Oscilloscope output" if you want to check it out.
 
-Anyway WS2812 doesn't work. It doesn't light on neither driving FPGA's switches nor with reset button. I attached constraints file.
+Anyway WS2812 doesn't work. It doesn't light on neither driving FPGA's switches nor clicking the reset button. I attached constraints file.
 
 LED respond only if I desconnect and reconnect the **Data_in** cable (**s_out** in the code). At the exactly contact moment, the LED gets a color. But still remain insensitive to switch or reset signals changes. To assign it another color you have to desconnect e reconnect again.
 
-What if I measure signal with the oscilloscope while wires from FPGA are hooked up at the LED? If I leave oscilloscope's ground connected to the GND signal, same behavior of before. If I desconnect ground, LED begins turning on with randomly color. 
+What if I measure signal with the oscilloscope while wires from FPGA are hooked up to the LED? If I leave oscilloscope's ground connected to the GND signal, it doesn't show any improvements. If I desconnect the ground, LED begins turning on with different colors. 
