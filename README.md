@@ -14,7 +14,7 @@ Trying to drive a single RGB LED WS2812 with an FPGA using VHDL
 # s_out timing
 Here the timing produced by the code for a period of T = 1.25 us + 0.1 us for 1 bit transmitted
 
-|    s_out    |    time (ISE testbench) |  time ( by oscilloscope) |
+|    s_out    |    time (ISE testbench) |  time (by oscilloscope)  |
 |-------------|-------------------------|--------------------------|
 | TH1 (UP1)   |    0.80 us              |          0.81 us         |
 | TL1 (DOWN1) |    0.50 us              |          0.46 us         |
