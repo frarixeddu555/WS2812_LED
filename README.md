@@ -56,6 +56,6 @@ In red on the right, there are the FSM's outputs for each state.
 
 The issue has been solved.
 
-The AC/DC adapter doesn't work properly and caused an 8.6V output from the 5V pinout of my board.
+The AC/DC adapter didn't work properly and caused an 8.6V output from the 5V pinout of my board.
 
-I solved changing with another AC/DC adaptor.
+I solved using another AC/DC adaptor.
