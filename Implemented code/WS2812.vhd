@@ -46,7 +46,7 @@ architecture Behavioral of TX_WS2812 is
 	constant 	time_up1 														: integer := 40; -- set time up1. time_down1 is tot_count_tmp - time_up1;
 	constant 	time_up0 														: integer := 18; -- set time up0. time_down0 is tot_count_tmp - time_up0;
 	constant 	tot_count_24 													: integer := 24;  -- number of bit to send
-	constant 	tot_count_50 													: integer := 1000; -- number of waiting clock cycles to refresh 
+	constant 	tot_count_50 													: integer := 2500; -- number of waiting clock cycles to refresh 
 	-- decoder
 	signal color : STD_LOGIC_VECTOR (23 downto 0);
 	-- counter single signal 0->1
