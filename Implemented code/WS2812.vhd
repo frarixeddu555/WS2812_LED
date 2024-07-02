@@ -43,28 +43,28 @@ architecture Behavioral of TX_WS2812 is
 	
 	-- constants
 	constant 	tot_count_tmp 													: integer := 63;  -- cycles to send one data of 24.
-	constant 	time_up1 														: integer := 40; -- set time up1. time_down1 is tot_count_tmp - time_up1;
-	constant 	time_up0 														: integer := 18; -- set time up0. time_down0 is tot_count_tmp - time_up0;
+	constant 	time_up1 													: integer := 40; -- set time up1. time_down1 is tot_count_tmp - time_up1;
+	constant 	time_up0 													: integer := 18; -- set time up0. time_down0 is tot_count_tmp - time_up0;
 	constant 	tot_count_24 													: integer := 24;  -- number of bit to send
 	constant 	tot_count_50 													: integer := 2500; -- number of waiting clock cycles to refresh 
 	-- decoder
 	signal color : STD_LOGIC_VECTOR (23 downto 0);
 	-- counter single signal 0->1
-	signal 	hit_down_1, hit_down_0, hit_up_1, hit_up_0 				: std_logic;
+	signal 	hit_down_1, hit_down_0, hit_up_1, hit_up_0 										: std_logic;
 	signal 	clr_tmp, en_tmp 													: std_logic;
-	signal 	count_tmp 															: unsigned (6 downto 0);
+	signal 	count_tmp 														: unsigned (6 downto 0);
 	-- counter 24 bit signal
-	signal 	hit_24 																: std_logic;
+	signal 	hit_24 															: std_logic;
 	signal 	clr_24, en_24														: std_logic;
-	signal 	count_24 															: unsigned (4 downto 0);
+	signal 	count_24 														: unsigned (4 downto 0);
 	-- counter 50 us
-	signal hit_50 																	: std_logic;
+	signal hit_50 															: std_logic;
 	signal clr_50, en_50 														: std_logic;
 	signal count_50 : unsigned (11 downto 0);
 	-- shifter register
-	signal load, shift 															: std_logic;
-	signal s_value 																: std_logic;
-	signal reg 																		: unsigned (23 downto 0);
+	signal load, shift 														: std_logic;
+	signal s_value 															: std_logic;
+	signal reg 															: unsigned (23 downto 0);
 	-- finite states machine
 	type estado is (IDLE, START, INIT, UP0, UP1, DOWN0, DOWN1, SH, RST_CODE);
 		signal state, state_nxt : estado;
