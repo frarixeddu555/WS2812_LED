@@ -39,7 +39,7 @@ For simplicity of testing I considered the first one version (without sensitive 
 
 In red on the right, there are the FSM's outputs for each state.
 
-![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/TX_WS2812_finite_state_machine.jpg)
+![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/main_schematic_data_to_LED.png)
 
 
 # Issues
