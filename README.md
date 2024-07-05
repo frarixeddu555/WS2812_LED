@@ -8,6 +8,15 @@ Driving a single RGB LED WS2812 with an FPGA using VHDL
 - ISE Xilinx
 
 
+# Main input-features
+The input **color** signal can be given in different ways:
+- Driving the LED by 3 switches (deconding 24 bit with 3bit);
+- Driving the brightness of one single LED's color with 8 switches (to unlock the 256 brightness levels for one color);
+- Fading one single LED's color;
+- Fading all the LED's colors in sequence.
+
+Some parts of the vhdl code are commented: you must comment or decomment one of these to unlock the input-feature you want.
+
 # s_out timing
 Here the timing produced by the code for a period of T = 1.25 us + 0.1 us for 1 bit transmitted
 
@@ -23,12 +32,11 @@ Here the timing produced by the code for a period of T = 1.25 us + 0.1 us for 1 
 # RTL Schematic
 Here the RTL schematic of the main project.
 
-Here the signal of more than 1 bit:
-- color [23:0];
+The signal **color** is the sole vector signal (color is a [23:0] signal).
 
 Most black color signals are **input** and **output** signals.
 
-There is a main schematic to wich the other modules can be hooked up for different ways of driving the LED.
+Here is represented the main schematic to wich the other modules can be hooked up to **color** signal for different ways of driving the LED.
 We have:
 - A module to drive one color by the switches;
 - A module to fade just one color by the switches (256 levels coded by 3 bit);
