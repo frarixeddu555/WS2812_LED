@@ -1,10 +1,7 @@
 # WS2812_LED
-
-Trying to drive a single RGB LED WS2812 with an FPGA using VHDL
-
+Driving a single RGB LED WS2812 with an FPGA using VHDL
 
 # Tools and devices
-
 - FPGA Spartan 3 XCS400-4FT256 (50 MHz)
 - LED RGB WS2812
 - Oscilloscope Tektronix TDS1001B
@@ -24,9 +21,19 @@ Here the timing produced by the code for a period of T = 1.25 us + 0.1 us for 1 
 
 
 # RTL Schematic
+Here the RTL schematic of the main project.
 
-Here the RTL schematic of the project.
-All signals are 1 bit signal less **color** that is a 24 bit signal (in order to drive just one LED).
+Here the signal of more than 1 bit:
+- color [23:0];
+
+Most black color signals are **input** and **output** signals.
+
+There is a main schematic to wich the other modules can be hooked up for different ways of driving the LED.
+We have:
+- A module to drive one color by the switches;
+- A module to fade just one color by the switches (256 levels coded by 3 bit);
+- A module to time-fading just one color (green in the code);
+- A module to time-fading (all the colors);
 
 ![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/main_schematic_data_to_LED.png)
 
