@@ -28,7 +28,7 @@ Here the timing produced by the code for a period of T = 1.25 us + 0.1 us for 1 
 Here the RTL schematic of the project.
 All signals are 1 bit signal less **color** that is a 24 bit signal (in order to drive just one LED).
 
-![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/TX_WS2812_schematic.jpg)
+![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/main_schematic_data_to_LED.png)
 
 
 # Finite state machine (FSM)
@@ -39,7 +39,7 @@ For simplicity of testing I considered the first one version (without sensitive 
 
 In red on the right, there are the FSM's outputs for each state.
 
-![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/main_schematic_data_to_LED.png)
+![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/TX_WS2812_finite_state_machine.jpg).
 
 
 # Issues
