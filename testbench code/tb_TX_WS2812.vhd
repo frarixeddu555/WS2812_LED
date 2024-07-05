@@ -43,7 +43,7 @@ ARCHITECTURE behavior OF tb_TX_WS2812 IS
     PORT(
 			ck : in std_logic;
 			reset : in std_logic;
-			switch : in  STD_LOGIC_VECTOR (2 downto 0);
+			switch : in  STD_LOGIC_VECTOR (7 downto 0);
 --        color : IN  std_logic_vector(23 downto 0);
          btn : IN  std_logic;
          s_out : OUT  std_logic
@@ -54,7 +54,7 @@ ARCHITECTURE behavior OF tb_TX_WS2812 IS
    --Inputs
 	signal ck : std_logic;
 	signal reset : std_logic;
-	signal switch : STD_LOGIC_VECTOR (2 downto 0);
+	signal switch : STD_LOGIC_VECTOR (7 downto 0);
 --   signal color : std_logic_vector(23 downto 0) := (others => '0');
    signal btn : std_logic := '0';
 
@@ -99,14 +99,22 @@ BEGIN
 		
 		wait for 200 ns;
 		
-		switch <= "100";
+--		switch <= "100";
 --		color <= "010101010101010101010101";
 		
 		wait for 45 ns;
 		
 		btn <= '1';
 		
-		wait for 15 ns;
+		wait for 70 ms;
+		
+		btn <= '0';
+		
+		wait for 500 us;
+		
+		btn <= '1';
+		
+		wait for 300 us;
 		
 		btn <= '0';
 		
@@ -118,9 +126,15 @@ BEGIN
 		
 		btn <= '0';
 		
-		wait for 20 us;
+		wait for 1 ms;
 		
-		switch <= "010";
+		btn <= '1';
+		
+		wait for 1 ms;
+		
+		btn <= '0';
+		
+--		switch <= "010";
 --		color <= "010101010101010101010101";
 		
       -- insert stimulus here 
