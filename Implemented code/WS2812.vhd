@@ -296,7 +296,7 @@ process (ck, reset)
 			ck_en <= '0';
 		
 		elsif (ck'event and ck = '1') then
-			if (cnt_div < 1249) then       -- The frequency for the LED must be > 400 Hz
+			if (cnt_div < 124999) then       -- The frequency for the LED must be > 400 Hz
 				cnt_div <= cnt_div + 1;
 				ck_en <= '0';
 					
@@ -308,7 +308,7 @@ process (ck, reset)
 end process;
 			
 
-	----- FADING AUX  ------
+	----- FADING AUX  ------  -- reverse and add offset to the color chose by the sequence of the FSM
 		process (ck, reset) 
 		begin
 			if (reset= '1') then
@@ -319,7 +319,7 @@ end process;
 				if (ck_en = '1') then
 					if (en_count1 = '1') then
 						if (add = '1') then	
-							blue_aux (7 downto 0) <= 
+							blue_aux (7 downto 0) <=         -- iff add = 1, then put in an auxiliar signal the sum of blue reverted plus an offset (to change the brightness)
 														(blue(0) &
 														 blue(1) &
 														 blue(2) &
@@ -391,7 +391,7 @@ end process;
 		
 ------ STATUS REGISTER ----- -- this and the previous process complete the reverse->add/odd->reverse function
 process (ck, reset) 			  -- we want to realize. In particular, this process gets the final reverse operation 
-	begin
+	begin							  -- and outputs the color signal 	
 		if (reset= '1') then
 			color 	<= (others => '0');
 			green 	<= (others => '0');
@@ -432,9 +432,9 @@ end process;
 	
 	----- FIRST Finite State Machine to control LED fading
 	
-process (ck, reset)
-	begin
-		if (reset = '1') then
+process (ck, reset)  							-- In this process we set up a sequence.
+	begin												-- We add and odd bit to reach this sequence:
+		if (reset = '1') then               -- 000000->FF0000->FF00FF->0000FF->00FF00->FFFF00->FF0000->...
 			state1 <= IDLE1;
 		elsif (ck'event and ck = '1') then
 			state1 <= state1_nxt;
@@ -598,10 +598,10 @@ end process;
 ---------------------------- END SWITCHES BLOCK --------------------------------
 --------------------------------------------------------------------------------
 
------------ COUNTER SINGLE SIGNAL (1 -> 0 cycle) --------                  -- at time_up0  =>  hit_up_0 = 1
-COUNTER_PERIOD : process (ck, reset)												-- at time_up1  => hit_up_1 = 1
-	begin																						-- at time_max => hit_down_0, hit_down_1 = 1
-		if (reset = '1') then                                    -- I wanted to use a single counter to drive the system counting part
+----------- COUNTER SINGLE SIGNAL (1 -> 0 cycle) --------               -- at time_up0  	=> hit_up_0 = 1
+COUNTER_PERIOD : process (ck, reset)												-- at time_up1  	=> hit_up_1 = 1
+	begin																						-- at time_max 	=> hit_down_0, hit_down_1 = 1
+		if (reset = '1') then                                   				-- I wanted to use a single counter to drive the system counting part
 				count_tmp <= (others => '0');
 		elsif (ck'event and ck = '1') then
 				if (clr_tmp = '1') then
@@ -645,8 +645,8 @@ RC_COUNTER_PERIOD : process (count_tmp)
 end process;
 									
 
-	----------- COUNTER SINGLE SIGNAL (24 BIT) --------					-- this module gives a hit_24 = 1 when the 24bits have been sent.
-COUNTER_24_BIT : process (ck, reset)
+	----------- COUNTER SINGLE SIGNAL (24 BIT) --------		
+COUNTER_24_BIT : process (ck, reset)				-- this module gives a hit_24 = 1 when the 24bits have been sent.
 	begin
 		if (reset = '1') then
 			count_24 <= (others => '0');
@@ -674,7 +674,7 @@ RC_COUNTER_24_BIT : process (count_24)
 end process;
 							
 	----------- COUNTER SINGLE SIGNAL (50 us) --------					
-COUNTER_RESET_TIME : process (ck, reset)                           -- this module counts how long should stay in the RST_CODE state
+COUNTER_RESET_TIME : process (ck, reset)           -- this module counts how long should stay in the RST_CODE state
 	begin
 		if (reset = '1') then
 			count_50 <= (others => '0');
@@ -693,7 +693,7 @@ COUNTER_RESET_TIME : process (ck, reset)                           -- this modul
 		end if;
 end process;
 
-	------------- SHIFTER REGISTER ------                           -- a simple shift register that sets the leftmost bits to 0 and provides the LSB as output to s_value
+	------------- SHIFTER REGISTER ------        -- a simple shift register that sets the leftmost bits to 0 and provides the LSB as output to s_value
 SHIFT_REGISTER : process (ck, reset)
 	begin
 		if (reset = '1') then
