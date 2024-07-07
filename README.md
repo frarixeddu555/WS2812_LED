@@ -9,7 +9,7 @@ Driving a single RGB LED WS2812 with an FPGA using VHDL
 
 
 # Main input-features
-The input **color** signal can be given with 4 different modules:
+The input **color** signal can be provided with 4 different modules:
 - Driving the LED by 3 switches (deconding 24 bit with 3bit);
 - Driving the brightness of one single LED's color with 8 switches (to unlock the 256 brightness levels for one color);
 - Fading one single LED's color;
