@@ -37,7 +37,7 @@ In red on the right, there are the FSM's outputs for each state.
 
 
 # s_out timing
-Here the timing produced by the code for a period of T = 1.25 us + 0.1 us for 1 bit transmitted
+Here the timing produced by the code for a period of T = 1.25 us + 500 ns (ideal period) for 1 bit transmitted.
 
 |    s_out    |    time (ISE testbench) |  time (by oscilloscope)  |
 |-------------|-------------------------|--------------------------|
