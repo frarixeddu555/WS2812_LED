@@ -36,22 +36,13 @@ The signal **color** is the sole vector signal (color is a [23:0] signal).
 
 The darker signals are **input** and **output** signals.
 
-Here is represented the main schematic to wich the other modules can be hooked up to **color** signal for different ways of driving the LED.
-We have:
-- A module to drive one color by the switches;
-- A module to fade just one color by the switches (256 levels coded by 3 bit);
-- A module to time-fading just one color (green in the code);
-- A module to time-fading (all the colors);
+Here is represented the main schematic to wich the other modules I described earlier can be hooked up to **color** signal to drive the LED in different ways.
 
 ![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/main_schematic_data_to_LED.png)
 
 
 # Finite state machine (FSM)
-There are **two trial version** of this FSM: 
-- one changes the color of the LED though changes in the state of the **switch** signal.
-- other uses a **btn** signal to light up the LED of the color indicated by the **switch** signal at that moment (_the commented part in the code_);
-For simplicity of testing I considered the first one version (without sensitive to btn signal by the system). 
-
+Here the FSM that provides the handy signals to realize the protocol used by the WS2812 to receive the 24bit datas. 
 In red on the right, there are the FSM's outputs for each state.
 
 ![alt text](https://github.com/frarixeddu555/WS2812_LED/blob/main/TX_WS2812_finite_state_machine.jpg).
