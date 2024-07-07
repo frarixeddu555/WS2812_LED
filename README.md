@@ -34,7 +34,7 @@ Here the RTL schematic of the main project.
 
 The signal **color** is the sole vector signal (color is a [23:0] signal).
 
-Most black color signals are **input** and **output** signals.
+The darker signals are **input** and **output** signals.
 
 Here is represented the main schematic to wich the other modules can be hooked up to **color** signal for different ways of driving the LED.
 We have:
